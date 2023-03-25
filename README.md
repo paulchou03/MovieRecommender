@@ -66,6 +66,7 @@ higher on the recommendation list than a movie with a lower 5-star rating
 star rating, then they must be further ordered based on the movie's name,
 alphabetically, in ascending order (e.g., Avalanche comes before The
 Matrix)
+
 ● Returning a vector with the requested number of the most highly ranked movie
 recommendations, ordered as described above. If fewer compatible movies were found
 than the requested number, then the vector must have all movies with a compatibility
