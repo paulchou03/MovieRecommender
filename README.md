@@ -39,8 +39,10 @@ etc.
 
 
 How recommender works
+
 ● Using the provided email address to find all of the movies the user has watched in the
 past
+
 ● For each movie m the user has previously watched, determining a compatibility score:
   ○ For each director d associated with m, each movie in the movie database that
 has d in its list of directors contributes 20 points to the compatibility score
@@ -48,8 +50,10 @@ has d in its list of directors contributes 20 points to the compatibility score
 in its list of actors contributes 30 points to the compatibility score
   ○ For each genre g associated with m, each movie in the movie database that has
 g in its list of genres contributes 1 point to the compatibility score
+
 ● For the movies that have a compatibility score of at least 1, filtering out the movies that
 the user has already watched (so you don't recommend them)
+
 ● Rank ordering all candidate movies that have a compatibility score of at least 1, breaking
 ties as follows:
   ○ Movies with a higher compatibility score must ordered higher on the
