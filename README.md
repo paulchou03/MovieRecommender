@@ -3,32 +3,29 @@
 movies.txt and users.txt can be resizeable (tested up to millions of users or movies).
 
 users.txt must follow the following format (include a line of space between new user):
-User Name
-User email
-Number of movie IDs
-ID1
-ID2
-ID3...
+User Name  
+User email  
+Number of movie IDs  
+ID1  
+ID2  
+ID3...  
 
 Example:
 ![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/5392039f-498d-4de6-87a8-0b3b910c99b4)
 
 
 movies.txt must follow the following format:
-Movie ID 1
-Movie Name
-12
-Movie Release Year
-director1
-director2...
-actor1
-actor2...
-genre1
-genre2...
-rating out of 5 stars
-actor1,actor2,...,actorn
-genre1,genre2,...,genren
-rating out of 5 stars
+Movie ID 1  
+Movie Name  
+12  
+Movie Release Year   
+director1  
+director2...  
+actor1  
+actor2...  
+genre1  
+genre2...  
+rating out of 5 stars    
 
 Example:
 ![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/17e65fc9-06bc-4f49-91db-7bb3b97721c0)
