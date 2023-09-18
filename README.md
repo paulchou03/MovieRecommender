@@ -11,7 +11,7 @@ ID2
 ID3...
 
 Example:
-![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/5dc75889-be14-42f5-8b94-93a04f188373)
+![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/5392039f-498d-4de6-87a8-0b3b910c99b4)
 
 
 movies.txt must follow the following format:
