@@ -2,40 +2,37 @@
 
 movies.txt and users.txt can be resizeable (tested up to millions of users or movies).
 
-users.txt must follow the following format:
-Person 1’s name
-Person 1’s email address
-Count of number of movies for person 1
-movieID#1
-movieID#2
-…
-movieID#n
-Person 2’s name
-Person 2’s email address
-Count of number of movies for person 2
-movieID#1
-movieID#2
-…
-movieID#n
-etc.
+users.txt must follow the following format (include a line of space between new user):
+User Name
+User email
+Number of movie IDs
+ID1
+ID2
+ID3...
+
+Example:
+![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/5dc75889-be14-42f5-8b94-93a04f188373)
+
 
 movies.txt must follow the following format:
 Movie ID 1
 Movie Name
 12
 Movie Release Year
-director1,director2,...,directorn
+director1
+director2...
+actor1
+actor2...
+genre1
+genre2...
+rating out of 5 stars
 actor1,actor2,...,actorn
 genre1,genre2,...,genren
 rating out of 5 stars
-Movie ID 2
-Movie Name
-Movie Release Year
-director1,director2,...,directorn
-actor1,actor2,...,actorn
-genre1,genre2,...,genren
-rating out of 5 stars
-etc.
+
+Example:
+![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/17e65fc9-06bc-4f49-91db-7bb3b97721c0)
+
 
 
 How recommender works
