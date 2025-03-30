@@ -1,64 +1,83 @@
-# MovieRecommender
+Movie Recommendation System
+This project is a movie recommendation system that suggests movies to users based on an underlying recommendation algorithm encapsulated within the system. The system operates on a database of users and a database of movies, where each user has a set of movie preferences and each movie has a set of attributes.
 
-movies.txt and users.txt can be resizeable (tested up to millions of users or movies).
+Program Structure
+The system is organized into the following classes, each of which corresponds to a source (*.cpp) and header (*.h) file pair:
 
-users.txt must follow the following format (include a line of space between new user):  
-User Name  
-User email  
-Number of movie IDs  
-ID1  
-ID2  
-ID3...  
+User: This class models a user in the system. It stores user attributes such as their email, name, and movie preferences.
 
-Example:
-![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/5392039f-498d-4de6-87a8-0b3b910c99b4)
+Movie: This class models a movie in the system. It stores movie attributes such as its title, release year, genre, and rating.
 
+UserDatabase: This class is a container for User objects. It provides functionalities to load user data from a file, retrieve a user by their email, and other user-related operations.
 
-movies.txt must follow the following format:
-Movie ID 1  
-Movie Name  
-12  
-Movie Release Year   
-director1, director2...   
-actor1, actor2...  
-genre1, genre2...  
-rating out of 5 stars    
+MovieDatabase: Similar to UserDatabase, this class is a container for Movie objects and provides functionalities to load movie data from a file, retrieve a movie by its ID, and other movie-related operations.
 
-Example:
-![image](https://github.com/paulchou03/MovieRecommender/assets/128890621/17e65fc9-06bc-4f49-91db-7bb3b97721c0)
+Recommender: This class encapsulates the recommendation algorithm of the system. It uses the UserDatabase and MovieDatabase to provide movie recommendations for a given user.
 
+TreeMultimap: This class is a generic template that provides a mapping between keys and multiple values. It could be used to map a user to multiple movies or vice versa.
 
+The main.cpp file is the entry point of the system. It initializes the UserDatabase and MovieDatabase with data from users.txt and movies.txt files, respectively, and uses the Recommender class to suggest movies to a given user.
 
-How recommender works  
+Files
+Below is a list of all the files in the project:
 
-● Using the provided email address to find all of the movies the user has watched in the
-past  
+User.h and User.cpp
+Movie.h and Movie.cpp
+UserDatabase.h and UserDatabase.cpp
+MovieDatabase.h and MovieDatabase.cpp
+Recommender.h and Recommender.cpp
+main.cpp
+users.txt
+movies.txt
+treemm.h
+How to Run
+Compile all the *.cpp files together. The entry point is main.cpp. Make sure that the users.txt and movies.txt files are in the same directory as the compiled executable.
 
-● For each movie m the user has previously watched, determining a compatibility score:  
-  ○ For each director d associated with m, each movie in the movie database that
-has d in its list of directors contributes 20 points to the compatibility score  
-  ○ For each actor a associated with m, each movie in the movie database that has a
-in its list of actors contributes 30 points to the compatibility score  
-  ○ For each genre g associated with m, each movie in the movie database that has
-g in its list of genres contributes 1 point to the compatibility score  
+Once compiled, you can run the executable, and the system will start by loading user data and movie data, and it will then generate movie recommendations for a given user.
 
-● For the movies that have a compatibility score of at least 1, filtering out the movies that
-the user has already watched (so you don't recommend them)  
+Note: As of now, the program's main function is hard-coded to find recommendations for the user "KabiL@aol.com". To change this, modify the user email in main.cpp.
 
-● Rank ordering all candidate movies that have a compatibility score of at least 1, breaking
-ties as follows:  
-  ○ Movies with a higher compatibility score must ordered higher on the
-recommendation list than movies with a lower compatibility score  
-  ○ If two or more movies have the same compatibility score, they must be further
-ordered based on:  
-    ■ The movie's rating; a movie with a higher 5-star rating must be ordered
-higher on the recommendation list than a movie with a lower 5-star rating  
-    ■ If two or more movies have the same compatibility score and the same 5-
-star rating, then they must be further ordered based on the movie's name,
-alphabetically, in ascending order (e.g., Avalanche comes before The
-Matrix)  
+Enjoy exploring the recommendations!
 
-● Returning a vector with the requested number of the most highly ranked movie
-recommendations, ordered as described above. If fewer compatible movies were found
-than the requested number, then the vector must have all movies with a compatibility
-score of at least 1, ordered as described above.  
+Future Work
+The current state of the project leaves room for a few enhancements:
+
+Implement user interactivity for inputting the user email.
+Extend the program to ask users for their preferences, update the preferences, and provide new recommendations based on updated data.
+Implement a command-line interface (CLI) or a graphical user interface (GUI) for better user experience.
+Compilation and Execution
+To compile and run the program, you will need a C++ compiler that supports at least the C++11 standard. For the purpose of this instruction, we will be using g++, a widely used C++ compiler that comes with GCC (GNU Compiler Collection).
+
+Compilation
+To compile all the .cpp files together, navigate to the directory containing the source code files and run the following command:
+
+g++ -std=c++11 -o MovieRecommender main.cpp User.cpp UserDatabase.cpp Movie.cpp MovieDatabase.cpp Recommender.cpp
+This command compiles all the .cpp files and creates an executable named MovieRecommender.
+
+Note: The -std=c++11 option is used to specify that the C++11 standard should be used for compilation.
+
+Execution
+To run the MovieRecommender executable, use the following command:
+
+./MovieRecommender
+About
+MovieRecommender is a C++ console program for personalized movie recommendations. It analyzes user ratings to suggest movies aligned with user preferences, showcasing object-oriented design, data structures, and file I/O operations.
+
+Resources
+ Readme
+ Activity
+Stars
+ 0 stars
+Watchers
+ 1 watching
+Forks
+ 0 forks
+Report repository
+Releases
+No releases published
+Packages
+No packages published
+Languages
+C++
+100.0%
+Footer
