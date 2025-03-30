@@ -40,13 +40,13 @@ Here is a list of all the source files included in this project:
 4. `MovieDatabase.h` and `MovieDatabase.cpp`
 5. `Recommender.h` and `Recommender.cpp`
 6. `main.cpp`
-7. `users.txt`
-8. `movies.txt`
+7. `users.txt` (sample data format is provided)
+8. `movies.txt` (sample data format is provided)
 9. `treemm.h`
 
 ---
 
-## ▶How to Run
+## How to Run
 
 To run the program, compile all `*.cpp` source files together. The entry point is `main.cpp`.  
 Ensure that both `users.txt` and `movies.txt` are located in the same directory as the compiled executable.
@@ -55,3 +55,30 @@ Once the program is compiled, executing it will load the user and movie data fro
 
 
 Enjoy exploring your personalized movie suggestions!
+
+## Compilation and Execution
+
+To build and run this program, you’ll need a C++ compiler that supports C++11 or newer. For demonstration purposes, we’ll use `g++`, a commonly used compiler that comes with the GNU Compiler Collection (GCC).
+
+---
+
+### Compilation
+
+To compile all `.cpp` files, navigate to the folder containing the source code and enter the following command in your terminal:
+
+```bash
+g++ -std=c++11 -o MovieRecommender main.cpp User.cpp UserDatabase.cpp Movie.cpp MovieDatabase.cpp Recommender.cpp
+```
+
+This command tells g++ to compile all the necessary .cpp files and output an executable named MovieRecommender
+
+### Execution
+To run the compiled MovieRecommender program, use the command below:
+```bash
+./MovieRecommender
+```
+Make sure that both users.txt and movies.txt are in the same directory as the executable when you run the program. These files are necessary for the system to load user and movie data.
+
+
+
+
